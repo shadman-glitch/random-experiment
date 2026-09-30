@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AURA — Next-Gen Spatial Audio & Smart Wearables</title>
-  <meta name="description" content="Shop luxury spatial audio headphones, smart audio glasses, and titanium smartwatches with real-time interactive 3D viewports and free 2-day delivery." />
-  
-  <!-- Modern Clean Typography (Google Fonts - Free Open Source) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <title>AURA. Just Listen. Official Store</title>
+  <meta name="description" content="Shop the latest spatial audio headphones, smart wearables, and titanium watches with real-time 3D interactive viewports." />
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/design-tokens.css" />
@@ -20,529 +15,327 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-  <!-- Ambient Background Lighting -->
-  <div class="bg-glow-layer"></div>
+  <!-- Nike Top Utility Sub-Nav -->
+  <div class="top-subnav">
+    <div class="top-subnav-inner">
+      <div class="subnav-brands">
+        <span class="subnav-brand-icon">AURA</span>
+        <span class="subnav-divider">|</span>
+        <span>LABS</span>
+        <span class="subnav-divider">|</span>
+        <span>SPATIAL 3D</span>
+      </div>
+      <ul class="subnav-links">
+        <li><a href="shop.html">Find a Product</a></li>
+        <li class="subnav-divider">|</li>
+        <li><a href="#help">Help</a></li>
+        <li class="subnav-divider">|</li>
+        <li><a href="shop.html">Join Us</a></li>
+        <li class="subnav-divider">|</li>
+        <li><a href="shop.html">Sign In</a></li>
+      </ul>
+    </div>
+  </div>
 
-  <div class="site-wrapper">
-    <!-- Floating Header Navigation -->
-    <header class="site-header container">
-      <nav class="nav-bar" aria-label="Main Navigation">
-        <a href="#" class="brand-logo" id="brand-logo">
-          <div class="brand-logo-icon">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4Z"/>
-            </svg>
-          </div>
+  <!-- Nike Main Sticky Header -->
+  <header class="main-header">
+    <div class="container">
+      <nav class="main-nav" aria-label="Main Navigation">
+        <!-- Brand Logo (Swoosh Style) -->
+        <a href="index.html" class="brand-logo" aria-label="AURA Home">
+          <svg class="brand-swoosh" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21.707 5.293a1 1 0 0 0-1.414 0L9 16.586l-4.293-4.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l12-12a1 1 0 0 0 0-1.414Z"/>
+          </svg>
           <span>AURA</span>
         </a>
 
-        <ul class="nav-links">
-          <li><a href="#catalog" class="nav-link active">Shop</a></li>
-          <li><a href="#catalog" class="nav-link" onclick="appStore.setCategory('Headphones')">Headphones</a></li>
-          <li><a href="#catalog" class="nav-link" onclick="appStore.setCategory('Glasses')">Glasses</a></li>
-          <li><a href="#catalog" class="nav-link" onclick="appStore.setCategory('Watches')">Watches</a></li>
-          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <!-- Center Nav with Mega-Menus -->
+        <ul class="nav-menu-list">
+          <li class="nav-item-dropdown">
+            <a href="shop.html" class="nav-link-btn active">New & Featured</a>
+            <div class="mega-menu-panel">
+              <div class="mega-menu-grid">
+                <div>
+                  <h4 class="mega-col-title">Featured</h4>
+                  <ul class="mega-col-links">
+                    <li><a href="shop.html?category=All">Shop All New Arrivals</a></li>
+                    <li><a href="shop.html?sort=rating">Best Sellers</a></li>
+                    <li><a href="product.html?id=aura-pro-headphones">AURA Pro Spatial 3D</a></li>
+                    <li><a href="shop.html?category=Headphones">Wireless Releases</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="mega-col-title">Shoes & Sound</h4>
+                  <ul class="mega-col-links">
+                    <li><a href="shop.html?category=Headphones">All Headphones</a></li>
+                    <li><a href="shop.html?category=Headphones">Noise Cancelling</a></li>
+                    <li><a href="shop.html?category=Headphones">Wireless Earbuds</a></li>
+                    <li><a href="shop.html?category=Headphones">Soundbars</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="mega-col-title">Smart Gear</h4>
+                  <ul class="mega-col-links">
+                    <li><a href="shop.html?category=Glasses">Audio Smart Glasses</a></li>
+                    <li><a href="shop.html?category=Watches">Titanium Watches</a></li>
+                    <li><a href="shop.html?category=Watches">Fitness Bands</a></li>
+                    <li><a href="shop.html?category=Accessories">Charging Docks</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="mega-col-title">Discover 3D</h4>
+                  <ul class="mega-col-links">
+                    <li><a href="product.html?id=aura-pro-headphones">Interactive 3D Stage</a></li>
+                    <li><a href="shop.html">Custom Colorways</a></li>
+                    <li><a href="shop.html">Acoustic Specs</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="shop.html?category=Headphones" class="nav-link-btn">Headphones</a>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="shop.html?category=Glasses" class="nav-link-btn">Smart Glasses</a>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="shop.html?category=Watches" class="nav-link-btn">Watches</a>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="shop.html?category=Accessories" class="nav-link-btn">Accessories</a>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="shop.html?sort=price-asc" class="nav-link-btn" style="color:var(--accent-orange);">Sale</a>
+          </li>
         </ul>
 
+        <!-- Right Action Controls -->
         <div class="nav-actions">
-          <!-- Theme Toggle -->
-          <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark and Light theme" title="Toggle theme">
+          <!-- Nike Search Pill Trigger -->
+          <button type="button" class="search-pill-btn" id="nav-search-trigger" aria-label="Search Nike Products">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+            <span>Search</span>
+          </button>
+
+          <!-- Theme Toggle -->
+          <button type="button" class="nav-icon-btn" id="theme-toggle-btn" aria-label="Toggle Dark and Light theme" title="Toggle theme">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1Z"/>
             </svg>
           </button>
 
-          <!-- Cart Trigger Button -->
-          <button class="btn-icon" id="cart-toggle-btn" aria-label="Open Shopping Bag" title="Shopping Bag">
+          <!-- Cart Bag Icon -->
+          <a href="cart.html" class="nav-icon-btn" aria-label="Shopping Bag">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
-              <path d="M3 6h18"/>
-              <path d="M16 10a4 4 0 0 1-8 0"/>
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
             </svg>
-            <span class="badge-counter" id="cart-badge">0</span>
-          </button>
+            <span class="cart-count-badge" id="nav-cart-badge">0</span>
+          </a>
         </div>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <!-- Main Content -->
-    <main>
-      <!-- Hero Section with Real-Time 3D Interactive Stage -->
-      <section class="hero-section container">
-        <div class="hero-content">
-          <div class="hero-pill">
-            <span>✨</span> Next-Gen Spatial Sound
-          </div>
-          <h1 class="hero-title">
-            Feel Sound in <br />
-            <span class="text-gradient">True 3D Space.</span>
+  <!-- Nike Full-Width Animated Search Overlay -->
+  <div class="nike-search-overlay" id="nike-search-overlay">
+    <div class="nike-search-bar-wrap">
+      <div class="search-bar-inner">
+        <a href="index.html" class="brand-logo" style="margin-right:1rem;">
+          <svg class="brand-swoosh" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21.707 5.293a1 1 0 0 0-1.414 0L9 16.586l-4.293-4.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l12-12a1 1 0 0 0 0-1.414Z"/>
+          </svg>
+        </a>
+        <div class="search-input-box">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input type="text" id="nike-search-input" placeholder="Search products, shoes, headphones..." autocomplete="off" />
+        </div>
+        <button type="button" class="search-cancel-btn" id="search-cancel-btn">Cancel</button>
+      </div>
+
+      <!-- Popular Search Terms -->
+      <div class="popular-search-section">
+        <div class="popular-search-title">Popular Search Terms</div>
+        <div id="popular-search-tags"></div>
+        <div id="live-search-results"></div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Nike Hero Banner with 3D Interactive Stage -->
+    <section class="container">
+      <div class="hero-nike-banner">
+        <div class="hero-nike-copy">
+          <span class="sub-headline-pill">AURA SPATIAL AIR • NEW DROP</span>
+          <h1 class="marketing-headline">
+            FEEL SOUND.<br />
+            IN TRUE 3D.
           </h1>
-          <p class="hero-description">
-            Immerse yourself in crystal-clear studio audio crafted with aerospace titanium and intelligent noise control. Designed for all-day comfort.
+          <p style="font-size:1.15rem; color:var(--text-secondary); max-width:480px;">
+            Immerse yourself in spatial sound precision. Lightweight titanium frame, intelligent noise cancellation, and all-day ergonomic comfort.
           </p>
-
-          <div class="hero-actions">
-            <a href="#catalog" class="btn-primary">
-              <span>Shop Collection</span>
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="m9 18 6-6-6-6"/>
-              </svg>
-            </a>
-            <button class="btn-secondary" onclick="openQuickLook('aura-pro-headphones')">
-              <span>View Specs</span>
-            </button>
-          </div>
-
-          <div class="hero-perks">
-            <div class="perk-item">
-              <span class="perk-icon">✓</span>
-              <span>Free 2-Day Delivery</span>
-            </div>
-            <div class="perk-item">
-              <span class="perk-icon">✓</span>
-              <span>30-Day Money Back</span>
-            </div>
-            <div class="perk-item">
-              <span class="perk-icon">✓</span>
-              <span>2-Year Warranty</span>
-            </div>
+          <div class="hero-cta-row">
+            <a href="shop.html" class="btn-nike-black">Shop Collection</a>
+            <a href="product.html?id=aura-pro-headphones" class="btn-nike-outline">Explore in 3D</a>
           </div>
         </div>
 
         <!-- 3D Interactive Viewport -->
-        <div class="viewport-3d-card" aria-label="3D Interactive Product Display">
-          <div class="interactive-hint">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/>
-            </svg>
-            <span>Drag to rotate 360° • Scroll to zoom</span>
-          </div>
-
-          <div class="viewport-canvas-container" id="hero-3d-viewport">
+        <div class="hero-3d-card" aria-label="3D Interactive Product Display">
+          <div class="canvas-viewport-box" id="hero-3d-viewport">
             <!-- Three.js Canvas injected here -->
           </div>
 
-          <!-- 3D Controls Toolbar -->
-          <div class="viewport-toolbar">
-            <div class="toolbar-swatches" aria-label="Color Selection">
-              <button class="swatch-btn active" style="background: #121316;" data-hex="0x121316" title="Obsidian Black"></button>
-              <button class="swatch-btn" style="background: #d1d5db;" data-hex="0xd1d5db" title="Cyber Silver"></button>
-              <button class="swatch-btn" style="background: #d4af37;" data-hex="0xd4af37" title="Cosmic Gold"></button>
-              <button class="swatch-btn" style="background: #22d3ee;" data-hex="0x22d3ee" title="Neon Cyan"></button>
+          <!-- 3D Controls Overlay -->
+          <div class="canvas-controls-overlay">
+            <div class="colorway-picker" aria-label="Select Colorway">
+              <button class="color-dot-btn active" style="background:#121316;" data-hex="0x121316" title="Obsidian Black"></button>
+              <button class="color-dot-btn" style="background:#d1d5db;" data-hex="0xd1d5db" title="Cyber Silver"></button>
+              <button class="color-dot-btn" style="background:#d4af37;" data-hex="0xd4af37" title="Cosmic Gold"></button>
+              <button class="color-dot-btn" style="background:#0ea5e9;" data-hex="0x0ea5e9" title="Electric Blue"></button>
             </div>
 
-            <div class="toolbar-toggles">
-              <button class="toggle-pill-btn active" id="toggle-rotate-btn" title="Toggle Auto-Rotation">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"/>
-                </svg>
+            <div style="display:flex; gap:0.5rem;">
+              <button type="button" class="action-pill-btn active" id="toggle-rotate-btn">
                 <span>Rotation ON</span>
               </button>
-              <button class="toggle-pill-btn" id="toggle-exploded-btn" title="Toggle Exploded Parts View">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                </svg>
+              <button type="button" class="action-pill-btn" id="toggle-exploded-btn">
                 <span>Exploded View</span>
               </button>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Catalog Section -->
-      <section class="catalog-section container" id="catalog">
-        <div class="section-header">
-          <div class="section-subtitle">Our Collection</div>
-          <h2 class="section-title">Engineered for Everyday Life</h2>
+    <!-- Trending Drops Grid -->
+    <section class="container" style="padding-bottom:5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:2rem;">
+        <div>
+          <span class="sub-headline-pill">Latest Innovation</span>
+          <h2 style="font-size:2rem; font-weight:800; text-transform:uppercase;">Trending Drops</h2>
         </div>
+        <a href="shop.html" class="btn-nike-outline" style="padding:0.6rem 1.4rem; font-size:0.85rem;">Shop All</a>
+      </div>
 
-        <!-- Controls: Search, Tabs, Sort -->
-        <div class="catalog-controls">
-          <div class="search-filter-row">
-            <div class="search-input-wrapper">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
-              </svg>
-              <input type="text" class="search-input" id="search-input" placeholder="Search headphones, watches, glasses..." aria-label="Search products" />
-            </div>
+      <div class="products-gridwall-grid" id="trending-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+  </main>
 
-            <select class="sort-select" id="sort-select" aria-label="Sort products by">
-              <option value="featured">Featured First</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-              <option value="rating">Top Rated</option>
-            </select>
-          </div>
-
-          <!-- Category Filter Tabs -->
-          <div class="category-tabs" role="tablist" aria-label="Filter Categories">
-            <button class="category-tab active" data-category="All" role="tab">All Products</button>
-            <button class="category-tab" data-category="Headphones" role="tab">Headphones</button>
-            <button class="category-tab" data-category="Glasses" role="tab">Smart Glasses</button>
-            <button class="category-tab" data-category="Watches" role="tab">Watches</button>
-            <button class="category-tab" data-category="Accessories" role="tab">Accessories</button>
-          </div>
-        </div>
-
-        <!-- Dynamic Product Cards Grid -->
-        <div class="products-grid" id="products-grid">
-          <!-- Populated dynamically by app.js -->
-        </div>
-      </section>
-
-      <!-- Customer Reviews & Social Proof Section -->
-      <section class="reviews-section" id="reviews">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-subtitle">Real Customer Stories</div>
-            <h2 class="section-title">Loved by Over 20,000 Listeners</h2>
-          </div>
-
-          <div class="reviews-grid">
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">
-                "The 3D spatial sound is unlike anything I have ever heard before. Movies feel like I am sitting in an IMAX theater, and music sounds completely alive."
-              </p>
-              <div class="review-author">
-                <img class="review-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Sarah Jenkins" />
-                <div>
-                  <div class="author-name">Sarah Jenkins</div>
-                  <div class="author-role">Verified Buyer • San Francisco</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">
-                "The memory foam is so soft I wear these for 8 hours of work calls every day with zero headache. Battery lasts all week on a single charge."
-              </p>
-              <div class="review-author">
-                <img class="review-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="David Marcus" />
-                <div>
-                  <div class="author-name">David Marcus</div>
-                  <div class="author-role">Verified Buyer • New York</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">
-                "Ordering was painless and delivery took only two days. The interactive 3D model on the site showed me exactly what I was getting."
-              </p>
-              <div class="review-author">
-                <img class="review-avatar" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80" alt="Elena Rostova" />
-                <div>
-                  <div class="author-name">Elena Rostova</div>
-                  <div class="author-role">Verified Buyer • Austin</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <a href="#" class="brand-logo">
-            <div class="brand-logo-icon">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4Z"/>
-              </svg>
-            </div>
-            <span>AURA</span>
-          </a>
-          <p>
-            Redefining consumer acoustics with spatial 3D audio, minimalist ergonomics, and zero-compromise hardware quality.
+  <!-- Nike Footer -->
+  <footer class="nike-footer">
+    <div class="nike-footer-inner">
+      <div class="footer-top-grid">
+        <div>
+          <h4 class="footer-heading">AURA TECHNOLOGIES</h4>
+          <p style="color:#8d8d8d; font-size:0.9rem; line-height:1.6; max-width:320px;">
+            Redefining spatial audio acoustics and smart wearables with zero-compromise hardware engineering.
           </p>
         </div>
-
-        <div class="footer-column">
-          <h4>Products</h4>
-          <ul>
-            <li><a href="#catalog" onclick="appStore.setCategory('Headphones')">Headphones</a></li>
-            <li><a href="#catalog" onclick="appStore.setCategory('Glasses')">Audio Glasses</a></li>
-            <li><a href="#catalog" onclick="appStore.setCategory('Watches')">Titanium Watches</a></li>
-            <li><a href="#catalog" onclick="appStore.setCategory('Accessories')">Power Accessories</a></li>
+        <div>
+          <h4 class="footer-heading">GET HELP</h4>
+          <ul class="footer-link-list">
+            <li><a href="shop.html">Order Status</a></li>
+            <li><a href="shop.html">Delivery & Shipping</a></li>
+            <li><a href="shop.html">Returns & Refunds</a></li>
+            <li><a href="shop.html">Contact Us</a></li>
           </ul>
         </div>
-
-        <div class="footer-column">
-          <h4>Customer Care</h4>
-          <ul>
-            <li><a href="#">Order Tracking</a></li>
-            <li><a href="#">Free Shipping Policy</a></li>
-            <li><a href="#">30-Day Returns</a></li>
-            <li><a href="#">2-Year Warranty</a></li>
+        <div>
+          <h4 class="footer-heading">EXPLORE</h4>
+          <ul class="footer-link-list">
+            <li><a href="shop.html?category=Headphones">Headphones</a></li>
+            <li><a href="shop.html?category=Glasses">Smart Glasses</a></li>
+            <li><a href="shop.html?category=Watches">Titanium Watches</a></li>
+            <li><a href="product.html?id=aura-pro-headphones">3D Showcase</a></li>
           </ul>
         </div>
-
-        <div class="footer-column">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#">About AURA</a></li>
+        <div>
+          <h4 class="footer-heading">ABOUT AURA</h4>
+          <ul class="footer-link-list">
+            <li><a href="#">News & Stories</a></li>
+            <li><a href="#">Careers</a></li>
             <li><a href="#">Sustainability</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Developers</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <div>&copy; 2026 AURA Technologies. All rights reserved. Built with zero paid APIs.</div>
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 AURA Inc. All Rights Reserved.</div>
         <div style="display:flex; gap:1.5rem;">
-          <span>100% Free Hosting</span>
-          <span>Zero Flaw Certified</span>
-        </div>
-      </div>
-    </footer>
-  </div>
-
-  <!-- Slide-Over Shopping Bag Drawer -->
-  <div class="cart-drawer-overlay" id="cart-overlay"></div>
-  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Bag Drawer">
-    <div class="cart-header">
-      <div class="cart-title">
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
-        </svg>
-        <span>Your Shopping Bag</span>
-      </div>
-      <button class="cart-close-btn" id="cart-close-btn" aria-label="Close bag drawer">
-        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
-
-    <!-- Free Delivery Progress Bar -->
-    <div class="shipping-bar-container">
-      <div class="shipping-bar-text" id="shipping-text">
-        <span>Add items to unlock Free Delivery</span>
-      </div>
-      <div class="shipping-bar-track">
-        <div class="shipping-bar-fill" id="shipping-fill"></div>
-      </div>
-    </div>
-
-    <!-- Items List -->
-    <div class="cart-items-list" id="cart-items-list">
-      <!-- Populated dynamically by store subscriber -->
-    </div>
-
-    <!-- Cart Footer & Price Breakdown -->
-    <div class="cart-footer">
-      <!-- Promo Code Form -->
-      <div class="promo-form">
-        <input type="text" class="promo-input" id="promo-input" placeholder="Promo code (e.g. WELCOME20)" />
-        <button class="promo-btn" id="promo-apply-btn">Apply</button>
-      </div>
-
-      <div class="cart-summary-row">
-        <span>Subtotal</span>
-        <strong id="cart-subtotal">$0.00</strong>
-      </div>
-      <div class="cart-summary-row" id="discount-row" style="display:none; color:var(--success);">
-        <span>Discount</span>
-        <strong id="cart-discount">-$0.00</strong>
-      </div>
-      <div class="cart-summary-row">
-        <span>Estimated Delivery</span>
-        <strong id="cart-shipping">FREE</strong>
-      </div>
-      <div class="cart-summary-row">
-        <span>Estimated Tax</span>
-        <strong id="cart-tax">$0.00</strong>
-      </div>
-      <div class="cart-summary-row total-row">
-        <span>Total</span>
-        <strong id="cart-total">$0.00</strong>
-      </div>
-
-      <button class="checkout-btn" id="checkout-open-btn">
-        <span>Proceed to Checkout</span>
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-      </button>
-    </div>
-  </aside>
-
-  <!-- Quick Look Modal -->
-  <div class="modal-overlay" id="quick-look-overlay">
-    <div class="modal-content" id="quick-look-modal" role="dialog" aria-modal="true">
-      <button class="modal-close-btn" onclick="document.getElementById('quick-look-overlay').classList.remove('open')" aria-label="Close modal">
-        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-
-      <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:2rem; align-items:center;">
-        <div style="background:var(--bg-tertiary); border-radius:var(--radius-md); padding:1.5rem; text-align:center;">
-          <img id="ql-image" src="" alt="Product View" style="max-width:100%; height:260px; object-fit:contain;" />
-        </div>
-
-        <div style="display:flex; flex-direction:column; gap:0.8rem;">
-          <h2 id="ql-title" style="font-size:1.6rem; font-weight:800;"></h2>
-          <div style="color:var(--accent-primary); font-weight:700; font-size:0.9rem;" id="ql-tagline"></div>
-          <div style="font-size:1.5rem; font-weight:800;" id="ql-price"></div>
-          <p id="ql-description" style="color:var(--text-muted); font-size:0.9rem; line-height:1.5;"></p>
-          
-          <div style="margin-top:0.5rem;">
-            <div style="font-size:0.85rem; font-weight:600; color:var(--text-muted); margin-bottom:0.4rem;">Select Color:</div>
-            <div id="ql-swatches" style="display:flex; gap:0.6rem;"></div>
-          </div>
-
-          <div style="margin-top:0.5rem;" id="ql-specs"></div>
-
-          <button class="btn-primary" style="margin-top:1rem; width:100%; justify-content:center;" onclick="addActiveToCart()">
-            <span>Add to Bag</span>
-          </button>
+          <a href="#">Terms of Sale</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Multi-Step Checkout Modal -->
-  <div class="modal-overlay" id="checkout-overlay">
-    <div class="modal-content" id="checkout-modal" role="dialog" aria-modal="true" style="max-width:560px;">
-      <button class="modal-close-btn" onclick="closeCheckout()" aria-label="Close checkout">
-        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-
-      <h2 style="font-size:1.5rem; font-weight:800; margin-bottom:1.5rem;">Complete Your Order</h2>
-
-      <!-- Stepper Indicator -->
-      <div class="checkout-stepper">
-        <div class="step-indicator active">
-          <div class="step-circle">1</div>
-          <span>Delivery</span>
-        </div>
-        <div class="step-indicator active">
-          <div class="step-circle">2</div>
-          <span>Payment</span>
-        </div>
-        <div class="step-indicator active">
-          <div class="step-circle">3</div>
-          <span>Review</span>
-        </div>
-      </div>
-
-      <form id="checkout-form" onsubmit="submitOrderForm(event)">
-        <!-- Step 1: Delivery Information -->
-        <h4 style="margin-bottom:0.8rem; font-size:0.95rem; color:var(--accent-primary);">1. Delivery Address</h4>
-        <div class="form-grid" style="margin-bottom:1.5rem;">
-          <div class="form-group full-width">
-            <label class="form-label" for="ship-name">Full Name</label>
-            <input type="text" class="form-input" id="ship-name" placeholder="Alex Mercer" required />
-          </div>
-          <div class="form-group full-width">
-            <label class="form-label" for="ship-email">Email Address</label>
-            <input type="email" class="form-input" id="ship-email" placeholder="alex@example.com" required />
-          </div>
-          <div class="form-group full-width">
-            <label class="form-label" for="ship-address">Street Address</label>
-            <input type="text" class="form-input" id="ship-address" placeholder="742 Evergreen Terrace" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="ship-city">City</label>
-            <input type="text" class="form-input" id="ship-city" placeholder="Springfield" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="ship-zip">Postal / Zip Code</label>
-            <input type="text" class="form-input" id="ship-zip" placeholder="97477" required />
-          </div>
-        </div>
-
-        <!-- Step 2: Payment Method -->
-        <h4 style="margin-bottom:0.8rem; font-size:0.95rem; color:var(--accent-primary);">2. Payment Method</h4>
-        <div class="payment-options-grid">
-          <div class="payment-card-opt active">
-            <strong>💳 Credit / Debit Card</strong>
-            <span style="font-size:0.75rem; color:var(--text-muted)">Instant & Encrypted</span>
-          </div>
-          <div class="payment-card-opt">
-            <strong>⚡ Express Checkout</strong>
-            <span style="font-size:0.75rem; color:var(--text-muted)">Apple Pay / Google Pay</span>
-          </div>
-        </div>
-
-        <div class="form-grid" style="margin-bottom:1.5rem;">
-          <div class="form-group full-width">
-            <label class="form-label" for="card-num">Card Number (Simulated)</label>
-            <input type="text" class="form-input" id="card-num" placeholder="4242 •••• •••• 4242" value="4242 •••• •••• 4242" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Expiry Date</label>
-            <input type="text" class="form-input" placeholder="12/28" value="12/28" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">CVV</label>
-            <input type="text" class="form-input" placeholder="888" value="888" />
-          </div>
-        </div>
-
-        <!-- Step 3: Order Summary -->
-        <h4 style="margin-bottom:0.8rem; font-size:0.95rem; color:var(--accent-primary);">3. Items in this order</h4>
-        <div id="checkout-items-summary" style="background:var(--bg-tertiary); padding:1rem; border-radius:var(--radius-sm); margin-bottom:1.5rem;">
-          <!-- Populated dynamically -->
-        </div>
-
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; font-size:1.15rem; font-weight:800;">
-          <span>Total to Pay:</span>
-          <span style="color:var(--accent-primary);" id="checkout-final-total">$0.00</span>
-        </div>
-
-        <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:1rem;">
-          <span>Place Order with 100% Free Shipping</span>
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Order Confirmation Celebration Modal -->
-  <div class="modal-overlay" id="confirmation-overlay">
-    <div class="modal-content" id="confirmation-modal" style="text-align:center; max-width:480px;">
-      <div style="width:72px; height:72px; border-radius:50%; background:var(--success-bg); color:var(--success); font-size:2.2rem; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem;">
-        ✓
-      </div>
-      <h2 style="font-size:1.8rem; font-weight:800; margin-bottom:0.5rem;">Order Confirmed!</h2>
-      <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.5rem;">
-        Thank you for your purchase. We are preparing your spatial hardware for delivery.
-      </p>
-
-      <div style="background:var(--bg-tertiary); padding:1.25rem; border-radius:var(--radius-md); text-align:left; font-size:0.88rem; display:flex; flex-direction:column; gap:0.6rem; margin-bottom:2rem;">
-        <div style="display:flex; justify-content:space-between;">
-          <span style="color:var(--text-muted)">Order Number:</span>
-          <strong id="conf-order-id" style="font-family:var(--font-mono); color:var(--accent-primary);">ORD-2026-9481</strong>
-        </div>
-        <div style="display:flex; justify-content:space-between;">
-          <span style="color:var(--text-muted)">Receipt Sent To:</span>
-          <strong id="conf-email">user@example.com</strong>
-        </div>
-        <div style="display:flex; justify-content:space-between;">
-          <span style="color:var(--text-muted)">Estimated Delivery:</span>
-          <strong id="conf-delivery">October 4, 2026</strong>
-        </div>
-        <div style="display:flex; justify-content:space-between;">
-          <span style="color:var(--text-muted)">Shipping Method:</span>
-          <strong style="color:var(--success);">Express 2-Day Air (Free)</strong>
-        </div>
-      </div>
-
-      <button class="btn-primary" style="width:100%; justify-content:center;" onclick="closeConfirmation()">
-        <span>Continue Shopping</span>
-      </button>
-    </div>
-  </div>
-
-  <!-- Toast Notifications Container -->
-  <div class="toast-container" id="toast-container"></div>
+  </footer>
 
   <!-- Scripts -->
   <script src="js/products-data.js"></script>
   <script src="js/store.js"></script>
-  <script src="js/api-service.js"></script>
   <script src="js/3d-engine.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/nav-search.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 3D Canvas
+      const aura3D = new Aura3DEngine('hero-3d-viewport');
+
+      // 3D Toolbar Events
+      document.querySelectorAll('.color-dot-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.color-dot-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const hex = parseInt(btn.dataset.hex);
+          if (aura3D) aura3D.setShellColor(hex);
+        });
+      });
+
+      const toggleRotate = document.getElementById('toggle-rotate-btn');
+      if (toggleRotate) {
+        toggleRotate.addEventListener('click', () => {
+          const isRotating = aura3D.toggleAutoRotate();
+          toggleRotate.classList.toggle('active', isRotating);
+          toggleRotate.querySelector('span').textContent = isRotating ? 'Rotation ON' : 'Rotation OFF';
+        });
+      }
+
+      const toggleExploded = document.getElementById('toggle-exploded-btn');
+      if (toggleExploded) {
+        toggleExploded.addEventListener('click', () => {
+          const isExploded = aura3D.toggleExplodedView();
+          toggleExploded.classList.toggle('active', isExploded);
+          toggleExploded.querySelector('span').textContent = isExploded ? 'Assemble View' : 'Exploded View';
+        });
+      }
+
+      // Render Trending Products
+      const trendingGrid = document.getElementById('trending-grid');
+      if (trendingGrid && window.PRODUCTS_DATA) {
+        trendingGrid.innerHTML = window.PRODUCTS_DATA.slice(0, 6).map(p => `
+          <a href="product.html?id=${p.id}" class="nike-product-card">
+            <div class="card-media-box">
+              <span class="card-tag-badge">${p.badge}</span>
+              <img class="card-product-img" src="${p.image}" alt="${p.name}" loading="lazy" />
+            </div>
+            <div class="card-content-box">
+              <div class="card-title">${p.name}</div>
+              <div class="card-category">${p.category}</div>
+              <div class="card-colorway-count">${p.colors ? p.colors.length : 1} Colours</div>
+              <div class="card-price">$${p.price}</div>
+            </div>
+          </a>
+        `).join('');
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AURA Shopping Bag — Official Store</title>
+  <meta name="description" content="Review items in your shopping bag and proceed to secure checkout." />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-tokens.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+  <!-- Top Utility Sub-Nav -->
+  <div class="top-subnav">
+    <div class="top-subnav-inner">
+      <div class="subnav-brands">
+        <span class="subnav-brand-icon">AURA</span>
+        <span class="subnav-divider">|</span>
+        <span>LABS</span>
+        <span class="subnav-divider">|</span>
+        <span>SPATIAL 3D</span>
+      </div>
+      <ul class="subnav-links">
+        <li><a href="shop.html">Find a Product</a></li>
+        <li class="subnav-divider">|</li>
+        <li><a href="#">Help</a></li>
+        <li class="subnav-divider">|</li>
+        <li><a href="#">Join Us</a></li>
+        <li class="subnav-divider">|</li>
+        <li><a href="#">Sign In</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="container">
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo" aria-label="AURA Home">
+          <svg class="brand-swoosh" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21.707 5.293a1 1 0 0 0-1.414 0L9 16.586l-4.293-4.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l12-12a1 1 0 0 0 0-1.414Z"/>
+          </svg>
+          <span>AURA</span>
+        </a>
+
+        <ul class="nav-menu-list">
+          <li class="nav-item-dropdown"><a href="shop.html" class="nav-link-btn">New & Featured</a></li>
+          <li class="nav-item-dropdown"><a href="shop.html?category=Headphones" class="nav-link-btn">Headphones</a></li>
+          <li class="nav-item-dropdown"><a href="shop.html?category=Glasses" class="nav-link-btn">Smart Glasses</a></li>
+          <li class="nav-item-dropdown"><a href="shop.html?category=Watches" class="nav-link-btn">Watches</a></li>
+          <li class="nav-item-dropdown"><a href="shop.html?category=Accessories" class="nav-link-btn">Accessories</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button type="button" class="search-pill-btn" id="nav-search-trigger" aria-label="Search">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+            <span>Search</span>
+          </button>
+
+          <button type="button" class="nav-icon-btn" id="theme-toggle-btn" aria-label="Toggle theme">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1Z"/>
+            </svg>
+          </button>
+
+          <a href="cart.html" class="nav-icon-btn" aria-label="Shopping Bag">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+            <span class="cart-count-badge" id="nav-cart-badge">0</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Nike Search Overlay -->
+  <div class="nike-search-overlay" id="nike-search-overlay">
+    <div class="nike-search-bar-wrap">
+      <div class="search-bar-inner">
+        <a href="index.html" class="brand-logo" style="margin-right:1rem;">
+          <svg class="brand-swoosh" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21.707 5.293a1 1 0 0 0-1.414 0L9 16.586l-4.293-4.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l12-12a1 1 0 0 0 0-1.414Z"/>
+          </svg>
+        </a>
+        <div class="search-input-box">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input type="text" id="nike-search-input" placeholder="Search products, shoes, headphones..." autocomplete="off" />
+        </div>
+        <button type="button" class="search-cancel-btn" id="search-cancel-btn">Cancel</button>
+      </div>
+
+      <div class="popular-search-section">
+        <div class="popular-search-title">Popular Search Terms</div>
+        <div id="popular-search-tags"></div>
+        <div id="live-search-results"></div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="cart-page-grid">
+      <!-- Left Column: Bag Items -->
+      <div class="bag-items-col">
+        <!-- Free Shipping Progress Notice -->
+        <div class="free-ship-notice-banner" id="free-ship-banner">
+          <strong>Free Shipping for Members.</strong> Free delivery on all orders over $150.
+        </div>
+
+        <h1 style="font-size:2rem; font-weight:800; letter-spacing:-0.02em;">
+          Bag <span id="cart-item-count" style="color:var(--text-secondary); font-weight:500;">(0)</span>
+        </h1>
+
+        <div id="cart-page-items-list">
+          <!-- Populated via store.js -->
+        </div>
+      </div>
+
+      <!-- Right Column: Sticky Summary Card -->
+      <div class="order-summary-card">
+        <h2 class="summary-title">Summary</h2>
+
+        <!-- Promo Code Accordion -->
+        <div style="border-bottom:1px solid var(--border-subtle); padding-bottom:1rem;">
+          <div style="font-size:0.9rem; font-weight:700; margin-bottom:0.5rem;">Do you have a Promo Code?</div>
+          <div style="display:flex; gap:0.5rem;">
+            <input type="text" id="cart-promo-input" placeholder="e.g. WELCOME20" class="nike-form-input" style="padding:0.6rem 0.8rem; text-transform:uppercase;" />
+            <button type="button" id="cart-promo-apply" class="btn-nike-outline" style="padding:0.6rem 1.2rem; font-size:0.85rem;">Apply</button>
+          </div>
+          <div id="promo-status-msg" style="font-size:0.8rem; margin-top:0.4rem;"></div>
+        </div>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="summary-subtotal">$0.00</strong>
+        </div>
+
+        <div class="summary-row" id="summary-discount-row" style="display:none; color:var(--accent-green);">
+          <span>Discount</span>
+          <strong id="summary-discount">-$0.00</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Estimated Delivery & Handling</span>
+          <strong id="summary-shipping">FREE</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Estimated Tax</span>
+          <strong id="summary-tax">$0.00</strong>
+        </div>
+
+        <div class="summary-row total-bold">
+          <span>Total</span>
+          <span id="summary-total">$0.00</span>
+        </div>
+
+        <a href="checkout.html" class="btn-nike-checkout" id="checkout-link-btn">
+          Member Checkout
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="nike-footer">
+    <div class="nike-footer-inner">
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 AURA Inc. All Rights Reserved.</div>
+        <div>Multi-Page E-Commerce Architecture • Zero-Flaw Certified</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/nav-search.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const itemsList = document.getElementById('cart-page-items-list');
+      const countLabel = document.getElementById('cart-item-count');
+      const subtotalEl = document.getElementById('summary-subtotal');
+      const discountRow = document.getElementById('summary-discount-row');
+      const discountEl = document.getElementById('summary-discount');
+      const shippingEl = document.getElementById('summary-shipping');
+      const taxEl = document.getElementById('summary-tax');
+      const totalEl = document.getElementById('summary-total');
+      const checkoutBtn = document.getElementById('checkout-link-btn');
+      const promoInput = document.getElementById('cart-promo-input');
+      const promoApplyBtn = document.getElementById('cart-promo-apply');
+      const promoMsg = document.getElementById('promo-status-msg');
+
+      appStore.subscribe((state, totals) => {
+        countLabel.textContent = `(${totals.totalItems})`;
+        subtotalEl.textContent = `$${totals.subtotal.toFixed(2)}`;
+        shippingEl.textContent = totals.shippingFee === 0 ? 'FREE' : `$${totals.shippingFee.toFixed(2)}`;
+        taxEl.textContent = `$${totals.tax.toFixed(2)}`;
+        totalEl.textContent = `$${totals.finalTotal.toFixed(2)}`;
+
+        if (totals.discountAmount > 0) {
+          discountRow.style.display = 'flex';
+          discountEl.textContent = `-$${totals.discountAmount.toFixed(2)}`;
+        } else {
+          discountRow.style.display = 'none';
+        }
+
+        if (totals.totalItems === 0) {
+          checkoutBtn.style.pointerEvents = 'none';
+          checkoutBtn.style.opacity = '0.5';
+          itemsList.innerHTML = `
+            <div style="padding:4rem 1rem; text-align:center; color:var(--text-secondary);">
+              <h3 style="font-size:1.4rem; color:var(--text-primary); margin-bottom:0.5rem;">There are no items in your bag.</h3>
+              <p style="margin-bottom:1.5rem;">Discover our latest 3D audio hardware and smart wearables.</p>
+              <a href="shop.html" class="btn-nike-black">Explore Products</a>
+            </div>
+          `;
+          return;
+        }
+
+        checkoutBtn.style.pointerEvents = 'auto';
+        checkoutBtn.style.opacity = '1';
+
+        itemsList.innerHTML = state.cart.map(item => `
+          <div class="cart-item-row">
+            <a href="product.html?id=${item.productId}">
+              <img src="${item.image}" alt="${item.name}" class="cart-item-thumb" />
+            </a>
+            <div class="cart-item-main">
+              <div style="display:flex; justify-content:space-between;">
+                <a href="product.html?id=${item.productId}" style="font-weight:700; font-size:1.05rem;">${item.name}</a>
+                <strong>$${(item.price * item.quantity).toFixed(2)}</strong>
+              </div>
+              <div style="font-size:0.85rem; color:var(--text-secondary);">Colour: ${item.color}</div>
+              <div style="font-size:0.85rem; color:var(--text-secondary); display:flex; align-items:center; gap:0.5rem; margin-top:0.4rem;">
+                <span>Quantity:</span>
+                <select onchange="updateQty('${item.productId}', '${item.color}', this.value)" style="padding:0.2rem 0.5rem; border:1px solid var(--border-medium); border-radius:var(--radius-xs); background:var(--bg-primary); color:var(--text-primary);">
+                  ${[1,2,3,4,5,6].map(n => `<option value="${n}" ${item.quantity === n ? 'selected' : ''}>${n}</option>`).join('')}
+                </select>
+              </div>
+              <div class="cart-item-actions-row">
+                <button type="button" class="icon-action-btn" onclick="appStore.removeFromCart('${item.productId}', '${item.color}')">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                  <span>Remove</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      });
+
+      window.updateQty = (productId, color, newQty) => {
+        const item = appStore.state.cart.find(i => i.productId === productId && i.color === color);
+        if (item) {
+          const delta = parseInt(newQty) - item.quantity;
+          appStore.updateQuantity(productId, color, delta);
+        }
+      };
+
+      if (promoApplyBtn) {
+        promoApplyBtn.addEventListener('click', () => {
+          const res = appStore.applyPromoCode(promoInput.value);
+          promoMsg.textContent = res.message;
+          promoMsg.style.color = res.success ? 'var(--accent-green)' : 'var(--accent-orange)';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

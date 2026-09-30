@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AURA Order Confirmed — Official Store</title>
+  <meta name="description" content="Your order has been confirmed and is being prepared for fast delivery." />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-tokens.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+  <header style="border-bottom:1px solid var(--border-subtle); padding:1.25rem 2rem; background:var(--bg-primary);">
+    <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:center;">
+      <a href="index.html" class="brand-logo" aria-label="AURA Home">
+        <svg class="brand-swoosh" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21.707 5.293a1 1 0 0 0-1.414 0L9 16.586l-4.293-4.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l12-12a1 1 0 0 0 0-1.414Z"/>
+        </svg>
+        <span>AURA</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container" style="max-width:650px; padding:4rem 2rem 6rem; text-align:center;">
+    <div style="width:72px; height:72px; border-radius:50%; background:var(--bg-secondary); color:var(--text-primary); font-size:2rem; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; border:2px solid var(--border-dark);">
+      ✓
+    </div>
+
+    <h1 style="font-size:2.2rem; font-weight:800; letter-spacing:-0.02em; margin-bottom:0.75rem;">
+      Thank You for Your Order.
+    </h1>
+    <p style="color:var(--text-secondary); font-size:1.05rem; margin-bottom:2.5rem;">
+      We've sent a confirmation email to <strong id="succ-email" style="color:var(--text-primary)">you</strong>.
+    </p>
+
+    <div style="background:var(--bg-secondary); border-radius:var(--radius-md); padding:1.75rem; text-align:left; border:1px solid var(--border-subtle); display:flex; flex-direction:column; gap:1rem; margin-bottom:2.5rem;">
+      <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-subtle); padding-bottom:0.75rem;">
+        <span style="color:var(--text-secondary);">Order Number:</span>
+        <strong id="succ-order-id" style="font-family:var(--font-mono); font-size:1rem;">ORD-2026-9482</strong>
+      </div>
+      <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-subtle); padding-bottom:0.75rem;">
+        <span style="color:var(--text-secondary);">Estimated Delivery:</span>
+        <strong id="succ-eta">3–5 Business Days</strong>
+      </div>
+      <div style="display:flex; justify-content:space-between;">
+        <span style="color:var(--text-secondary);">Shipping Service:</span>
+        <strong style="color:var(--accent-green);">Tracked Express Delivery</strong>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn-nike-black" style="padding:1rem 2.5rem; font-size:1rem;">
+      Continue Shopping
+    </a>
+  </main>
+
+  <footer class="nike-footer">
+    <div class="nike-footer-inner" style="text-align:center; font-size:0.85rem; color:#8d8d8d;">
+      &copy; 2026 AURA Inc. All Rights Reserved. Built with zero-cost architecture.
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const orderId = params.get('orderId') || 'ORD-2026-4891';
+      const email = params.get('email') || 'your email';
+      const eta = params.get('eta') || 'October 4, 2026';
+
+      document.getElementById('succ-order-id').textContent = orderId;
+      document.getElementById('succ-email').textContent = email;
+      document.getElementById('succ-eta').textContent = eta;
+
+      // Confetti celebration
+      launchConfetti();
+    });
+
+    function launchConfetti() {
+      const canvas = document.createElement('canvas');
+      canvas.style.position = 'fixed';
+      canvas.style.top = '0';
+      canvas.style.left = '0';
+      canvas.style.width = '100vw';
+      canvas.style.height = '100vh';
+      canvas.style.pointerEvents = 'none';
+      canvas.style.zIndex = '99999';
+      document.body.appendChild(canvas);
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const ctx = canvas.getContext('2d');
+      const particles = [];
+      const colors = ['#111111', '#fa541c', '#007a33', '#0ea5e9', '#d4af37'];
+
+      for (let i = 0; i < 90; i++) {
+        particles.push({
+          x: canvas.width / 2,
+          y: canvas.height / 2,
+          vx: (Math.random() - 0.5) * 16,
+          vy: (Math.random() - 0.7) * 18,
+          size: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          vr: (Math.random() - 0.5) * 10
+        });
+      }
+
+      let frame = 0;
+      function renderConfetti() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy += 0.35;
+          p.rotation += p.vr;
+
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate((p.rotation * Math.PI) / 180);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+          ctx.restore();
+        });
+
+        frame++;
+        if (frame < 120) {
+          requestAnimationFrame(renderConfetti);
+        } else {
+          canvas.remove();
+        }
+      }
+      requestAnimationFrame(renderConfetti);
+    }
+  </script>
+</body>
+</html>
