@@ -1,0 +1,26 @@
+name: AURA CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js (Free Environment)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Team Automated Test Suite
+        run: node tests/run-tests.js
+
+      - name: Audit Zero-Defect Quality Gates
+        run: node agent-team/team-orchestrator.js
